@@ -1,0 +1,8 @@
+.teste {
+    background-color: orangered;
+}
+
+.logoSize {
+    width: calc(220px * 0.3);
+    height: calc(178px * 0.3);
+}
