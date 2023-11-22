@@ -24,13 +24,14 @@ main{
 
 .inputLogin {
     margin-top: 10%;
-    margin-left: 10%;
     width: 80%;
+    margin-left: 10%;
     background-color: #FFAC00;
     border-radius: 15px;
 }
 
 .submitButton {
-    margin-top: 10%;
+    margin-top: 6%;
     background-color: #1E90FF;
+    font-size: 30px;
 }
