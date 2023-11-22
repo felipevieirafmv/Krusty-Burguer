@@ -1,0 +1,36 @@
+main{
+    background-color: #FFA500;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loginBox {
+    background-color: orangered;
+    font-family: 'Vina Sans', sans-serif;
+    height: 60%;
+    width: 50%;
+    text-align: center;
+    border-radius: 30px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.4);
+}
+
+.logoSize {
+    margin-top: 15px;
+    width: calc(220px * 0.5);
+    height: calc(178px * 0.5);
+}
+
+.inputLogin {
+    margin-top: 10%;
+    margin-left: 10%;
+    width: 80%;
+    background-color: #FFAC00;
+    border-radius: 15px;
+}
+
+.submitButton {
+    margin-top: 10%;
+    background-color: #1E90FF;
+}
