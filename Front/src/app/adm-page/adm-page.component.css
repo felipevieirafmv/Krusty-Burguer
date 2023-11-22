@@ -1,0 +1,15 @@
+.mainBox {
+    background-color: #FFA500;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.buttonBox{
+    height: 60%;
+}
+
+.admButton {
+    
+}
