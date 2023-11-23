@@ -1,0 +1,28 @@
+.mainBox {
+    background-color: #FFA500;
+    display: flex;
+    min-height: 92%;
+    width: 100%;
+}
+
+.logoSize {
+    width: calc(220px * 0.3);
+    height: calc(178px * 0.3);
+}
+
+.endButton {
+    background-color: #1E90FF;
+}
+
+p {
+    margin: 0;
+}
+
+.itemPedido {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding: 3px;
+    border-radius: 5px;
+    background-color: #e9d5b8;
+}
