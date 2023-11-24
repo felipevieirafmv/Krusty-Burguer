@@ -26,3 +26,8 @@ p {
     border-radius: 5px;
     background-color: #e9d5b8;
 }
+
+.buttonDiv {
+    display: flex;
+    justify-content: space-between;
+}

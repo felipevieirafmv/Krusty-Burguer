@@ -1,6 +1,6 @@
 .mainBox {
     background-color: #FFA500;
-    height: 100vh;
+    height: 92%;
     overflow-y: hidden;
     /* font-family: 'Vina Sans', sans-serif; */
 }
@@ -20,24 +20,12 @@
     margin: 2% 0 2% 2%;
 }
 
-.productCategories {
-    height: 90%;
-    background-color: lightgray;
-    align-items: center;
+.cardImg {
+    width: calc(195px * 0.8);
+    height: calc(166px * 0.8);
+    margin-top: 10px;
 }
 
-.products {
-    background-color: darkblue;
-    height: 100%;
-}
-
-.iconDiv {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 10%;
-}
-
-.icon {
-    height: 180px;
+.endButton {
+    background-color: #1E90FF;
 }

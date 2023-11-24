@@ -5,22 +5,90 @@
 </nav>
 <div class="mainBox">
     <div class="addDiv">
-        <button type="button" class="btn btn-secondary addButton">Adicionar Produto</button>
-    </div>
-    <div class="row" style="width: 100%; height: 90%;">
-        <div class="col-sm-3 productCategories">
-            <div class="iconDiv">
-                <img src="../../assets/hamburguer.png"  class="icon">
-            </div>
-            <div class="iconDiv">
-                <img src="../../assets/soda.png"  class="icon">
-            </div>
-            <div class="iconDiv">
-                <img src="../../assets/milkshake.png"  class="icon">
+        <button type="button" class="btn btn-secondary addButton" data-bs-toggle="modal" data-bs-target="#addModal">Adicionar Produto</button>
+        <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Cadastrar produto</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="">
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" placeholder="Nome" aria-label="Nome" aria-describedby="basic-addon1">
+                            </div>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" placeholder="Preço" aria-label="Preço" aria-describedby="basic-addon1">
+                            </div>
+                            <div class="input-group mb-3">
+                                <input type="file" class="form-control" id="">
+                            </div>
+                            <div class="input-group">
+                                <span class="input-group-text">Descrição</span>
+                                <textarea class="form-control" aria-label="Descrição"></textarea>
+                            </div>
+                       </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary" >Save changes</button>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="col-sm-9 products">
-
+    </div>
+    <div class="row" style="width: 100%; margin: 0; padding: 1% 5% 0 5%; height: 50%;">
+        <div class="col-sm-3" style="padding-top: 2%;">
+            <div class="card" style="align-items: center;">
+                <img src="../../assets/krusty.png" class="card-img-top cardImg" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Krusty Burger Platter - $12.99
+                </h5>
+                  <p class="card-text">1/3 lb. Burger with Secret Sauce, cheddar cheese sauce, a giant tomato slice, iceberg lettuce, on a specialty bun. Served with Kurly fries.</p>
+                  <button type="button" class="btn btn-primary endButton">Editar</button>
+                </div>
+              </div>
+        </div>
+        <div class="col-sm-3" style="padding-top: 2%;">
+            <div class="card">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <button type="button" class="btn btn-primary endButton">Editar</button>
+                </div>
+              </div>
+        </div>
+        <div class="col-sm-3" style="padding-top: 2%;">
+            <div class="card">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <button type="button" class="btn btn-primary endButton">Editar</button>
+                </div>
+              </div>
+        </div>
+        <div class="col-sm-3" style="padding-top: 2%;">
+            <div class="card">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <button type="button" class="btn btn-primary endButton">Editar</button>
+                </div>
+              </div>
+        </div>
+        <div class="col-sm-3" style="padding-top: 2%;">
+            <div class="card">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <button type="button" class="btn btn-primary endButton">Editar</button>
+                </div>
+              </div>
         </div>
     </div>
 </div>

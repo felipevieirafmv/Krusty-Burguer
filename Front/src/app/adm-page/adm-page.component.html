@@ -5,7 +5,40 @@
 </nav>
 <div class="mainBox">
     <button type="button" class="btn btn-secondary admButton">Produtos</button>
-    <button type="button" class="btn btn-secondary admButton">Promoções</button>
+    <div class="addDiv" style="margin-top: 2%;">
+        <button type="button" class="btn btn-secondary addButton" data-bs-toggle="modal" data-bs-target="#addModal">Adicionar Promoção</button>
+        <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Adicionar Promoção</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="">
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" placeholder="Nome" aria-label="Nome" aria-describedby="basic-addon1">
+                            </div>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" placeholder="Preço" aria-label="Preço" aria-describedby="basic-addon1">
+                            </div>
+                            <div class="input-group mb-3">
+                                <input type="file" class="form-control" id="">
+                            </div>
+                            <div class="input-group">
+                                <span class="input-group-text">Descrição</span>
+                                <textarea class="form-control" aria-label="Descrição"></textarea>
+                            </div>
+                       </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary" >Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <button type="button" class="btn btn-secondary admButton">Dashboard</button>
     <button type="button" class="btn btn-secondary admButton">Totem</button>
     <button type="button" class="btn btn-secondary admButton">Pedidos</button>
