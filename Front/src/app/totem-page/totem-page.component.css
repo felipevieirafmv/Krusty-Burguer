@@ -1,6 +1,6 @@
 .mainBox {
     background-color: #FFA500;
-    height: 100vh;
+    height: 92vh;
     overflow-y: hidden;
     /* font-family: 'Vina Sans', sans-serif; */
 }
@@ -21,13 +21,17 @@
 }
 
 .productCategories {
-    height: 90%;
-    background-color: lightgray;
+    height: 100%;
+    background-color: #00000021;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
     align-items: center;
 }
 
 .products {
-    background-color: darkblue;
+    background-color: #1E90FF;
     height: 100%;
 }
 
@@ -40,4 +44,27 @@
 
 .icon {
     height: 180px;
+}
+
+.col-sm-9::-webkit-scrollbar {
+    display: none;
+}
+
+.carrinho {
+    height: 25vh;
+    background-color: crimson;
+    overflow-y: scroll;
+}
+
+.carrinho::-webkit-scrollbar {
+    display: none;
+}
+
+.itemPedido {
+    display: flex;
+    margin-top: 5%;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-color: #e9d5b8;
 }
