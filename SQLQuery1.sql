@@ -28,7 +28,9 @@ go
 
 create table Pedido(
 	ID int identity primary key,
-	UsuarioID int references Usuario(ID) not null
+	UsuarioID int references Usuario(ID) not null,
+	HoraPedido datetime not null,
+	HoraEntregue datetime
 )
 go
 
