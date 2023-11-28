@@ -1,14 +1,14 @@
 use master
 go
 
-if exists(select * from sys.databases where name = 'KrustyBurger')
-	drop database KrustyBurger
+if exists(select * from sys.databases where name = 'KrustyBurgerDB')
+	drop database KrustyBurgerDB
 go
 
-create database KrustyBurger
+create database KrustyBurgerDB
 go
 
-use KrustyBurger
+use KrustyBurgerDB
 go
 
 create table Imagem(
