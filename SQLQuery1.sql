@@ -41,9 +41,17 @@ create table Produto(
 )
 go
 
+create table Promocao(
+	ID int identity primary key,
+	ProdutoID int references Produto(ID),
+	Preco float not null
+)
+go
+
 create table PedidoProduto(
 	ID int identity primary key,
 	ProdutoID int references Produto(ID),
+	PromocaoID int references Promocao(ID),
 	Quantidade int not null
 );
 go
