@@ -28,14 +28,13 @@ public partial class KrustyBurgerDbContext : DbContext
     public virtual DbSet<Usuario> Usuarios { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
         => optionsBuilder.UseSqlServer("Data Source=CT-C-001YQ\\SQLEXPRESS01;Initial Catalog=KrustyBurgerDB;Integrated Security=True;TrustServerCertificate=true");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Imagem>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Imagem__3214EC27E1384046");
+            entity.HasKey(e => e.Id).HasName("PK__Imagem__3214EC272D2451F0");
 
             entity.ToTable("Imagem");
 
@@ -45,7 +44,7 @@ public partial class KrustyBurgerDbContext : DbContext
 
         modelBuilder.Entity<Pedido>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Pedido__3214EC27EB6BA642");
+            entity.HasKey(e => e.Id).HasName("PK__Pedido__3214EC27793C5640");
 
             entity.ToTable("Pedido");
 
@@ -62,7 +61,7 @@ public partial class KrustyBurgerDbContext : DbContext
 
         modelBuilder.Entity<PedidoProduto>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__PedidoPr__3214EC279C0FFE31");
+            entity.HasKey(e => e.Id).HasName("PK__PedidoPr__3214EC270E0317AE");
 
             entity.ToTable("PedidoProduto");
 
@@ -81,7 +80,7 @@ public partial class KrustyBurgerDbContext : DbContext
 
         modelBuilder.Entity<Produto>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Produto__3214EC279664F002");
+            entity.HasKey(e => e.Id).HasName("PK__Produto__3214EC2793F568C7");
 
             entity.ToTable("Produto");
 
@@ -102,7 +101,7 @@ public partial class KrustyBurgerDbContext : DbContext
 
         modelBuilder.Entity<Promocao>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Promocao__3214EC27F675D65C");
+            entity.HasKey(e => e.Id).HasName("PK__Promocao__3214EC270372EB78");
 
             entity.ToTable("Promocao");
 
@@ -116,12 +115,16 @@ public partial class KrustyBurgerDbContext : DbContext
 
         modelBuilder.Entity<Usuario>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Usuario__3214EC2761049635");
+            entity.HasKey(e => e.Id).HasName("PK__Usuario__3214EC27C27487AA");
 
             entity.ToTable("Usuario");
 
             entity.Property(e => e.Id).HasColumnName("ID");
             entity.Property(e => e.Adm).HasDefaultValueSql("((0))");
+            entity.Property(e => e.Cpf)
+                .IsRequired()
+                .HasMaxLength(20)
+                .IsUnicode(false);
             entity.Property(e => e.Nome)
                 .IsRequired()
                 .HasMaxLength(80)
