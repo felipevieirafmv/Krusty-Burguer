@@ -1,12 +1,14 @@
 
 using System;
-using System.Security.Cryptography;
+using System.IO;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
+using System.Security.Cryptography;
 
-namespace back.Services;
+namespace Back.Services;
 
-public class SecurityService : ISecuritySercive
+public class SecurityService : ISecurityService
 {
     public async Task<string> GenerateSalt()
     {
@@ -15,23 +17,15 @@ public class SecurityService : ISecuritySercive
         return base64salt;
     }
 
-    public Task<string> HashPassword(string password, string salt)
+    public async Task<string> HashPassword(string password, string salt)
     {
         var saltBytes = Convert.FromBase64String(salt);
         var passwordBytes = Encoding.UTF8.GetBytes(password);
 
         var hashBytes = getHash(saltBytes, passwordBytes);
+        var hash = Convert.ToBase64String(hashBytes);
 
-    }
-    
-    public Task<string> GenerateJwt<T>(T obj)
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public Task<string> ValidateJwt<T>(string jwt)
-    {
-        throw new System.NotImplementedException();
+        return hash;
     }
 
     private byte[] getRandomArray()

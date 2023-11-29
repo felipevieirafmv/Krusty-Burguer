@@ -20,6 +20,7 @@ go
 create table Usuario(
 	ID int identity primary key,
 	Nome varchar(80) not null,
+	Cpf varchar(20) not null,
 	Senha varchar(MAX) not null,
 	Salt varchar(200) not null,
 	Adm bit default 0

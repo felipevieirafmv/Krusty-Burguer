@@ -2,9 +2,9 @@ using System;
 
 namespace DTO;
 
-public class UserData
+public class UserDataLogin
 {
     public string Login { get; set; }
     public string Password { get; set; }
-    public bool isAdm  { get; set; }
+    public bool Adm { get; set; }
 }

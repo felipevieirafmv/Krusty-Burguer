@@ -1,11 +1,9 @@
 using System.Threading.Tasks;
 
-namespace back.Services;
+namespace Back.Services;
 
-public interface ISecuritySercive
+public interface ISecurityService
 {
     Task<string> GenerateSalt();
     Task<string> HashPassword(string password, string salt);
-    Task<string> GenerateJwt<T>(T obj);
-    Task<string> ValidateJwt<T>(string jwt);
 }

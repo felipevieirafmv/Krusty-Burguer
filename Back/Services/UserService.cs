@@ -1,8 +1,8 @@
 using System.Linq;
-using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
-namespace back.Services;
+namespace Back.Services;
 
 using Back.Model;
 using DTO;
@@ -10,15 +10,39 @@ using DTO;
 public class UserService : IUserService
 {
     KrustyBurgerDbContext ctx;
+    ISecurityService security;
     
-    public Task Create(UserData data)
+    public UserService(KrustyBurgerDbContext ctx, ISecurityService security)
     {
-        throw new System.NotImplementedException();
+        this.ctx = ctx;
+        this.security = security;
     }
 
-    public Task<Usuario> GetByLogin(string login)
+    public async Task Create(UserDataCadastro data)
     {
-        throw new System.NotImplementedException();
+        Usuario usuario = new Usuario();
+        var salt = await security.GenerateSalt();
+
+        usuario.Nome = data.Login;
+        usuario.Cpf = data.Cpf;
+        usuario.Senha = await security.HashPassword(
+            data.Password, salt
+        );
+        usuario.Adm = data.Adm;
+        usuario.Salt = salt;
+
+        this.ctx.Add(usuario);
+        await this.ctx.SaveChangesAsync();
+    }
+
+    public async Task<Usuario> GetByLogin(string login)
+    {
+        var query = 
+            from u in this.ctx.Usuarios
+            where u.Nome == login
+            select u;
+        
+        return await query.FirstOrDefaultAsync();
     }
 }
 
