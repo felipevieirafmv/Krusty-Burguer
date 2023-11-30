@@ -8,7 +8,6 @@ main{
 
 .loginBox {
     background-color: orangered;
-    font-family: 'Vina Sans', sans-serif;
     padding-bottom: 3%;
     width: 50%;
     text-align: center;
@@ -23,10 +22,8 @@ main{
 }
 
 .inputLogin {
-    margin-top: 10%;
+    margin-top: 5%;
     width: 80%;
-    margin-left: 10%;
-    background-color: #FFAC00;
     border-radius: 15px;
 }
 

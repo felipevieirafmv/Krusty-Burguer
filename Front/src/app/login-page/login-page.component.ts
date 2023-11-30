@@ -33,7 +33,6 @@ export class LoginPageComponent {
 		this.client.login({
 			login: this.username,
 			password: this.password,
-			cpf: this.cpf,
 			adm: false
 		}, (result: any) =>{
 			if (result == null)
