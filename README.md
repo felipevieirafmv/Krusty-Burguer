@@ -2,33 +2,33 @@
 
 Obs: 'Tem tela/Tem Interface' = Possui parte visual, mesmo sem funcionar.
 
-- [ ] Repositório GIT criado.
-- [ ] Porjeto do Frontend Angular Criado.
-- [ ] Possui tela de Login.
-- [ ] Possui tela de cadastro.
+- [X] Repositório GIT criado.
+- [X] Projeto do Frontend Angular Criado.
+- [X] Possui tela de Login.
+- [X] Possui tela de cadastro.
 - [ ] Possui tela de usuário normal das promoções.
 - [ ] Possui tela para visualizar código da promoção.
-- [ ] Possui tela de Administrador.
-- [ ] Possui tela de Pedidos.
-- [ ] Possui tela de Cadastro de Produtos.
+- [X] Possui tela de Administrador.
+- [X] Possui tela de Pedidos.
+- [X] Possui tela de Cadastro de Produtos.
 - [ ] Possui tela de Cadastro de Promoções.
-- [ ] Possui tela do totem.
+- [X] Possui tela do totem.
 - [ ] Possui tela dos gráficos.
 - [ ] Tela do totem tem interface para inserção de código da promoção.
 - [ ] Tela do totem tem interface para colocar itens na sacola.
-- [ ] Banco de dados criado com tabelas de Usuário, Pedido, ItemPedido, Produto, Promoção ou similar.
+- [X] Banco de dados criado com tabelas de Usuário, Pedido, ItemPedido, Produto, Promoção ou similar.
 - [ ] Rotas no Frontend Configuradas.
-- [ ] Projeto Backend C# criado.
-- [ ] CORS Configurado.
+- [X] Projeto Backend C# criado.
+- [X] CORS Configurado.
 - [ ] HttpClient configurado e podendo ser usado para fazer quests entre Back e Front.
-- [ ] Entity Framework Configurado no Backend e Model gerada.
-- [ ] Bilbioteca de JWT instalada.
-- [ ] Operação de cadastro realmente salva um usuário no banco de dados.
+- [X] Entity Framework Configurado no Backend e Model gerada.
+- [X] Biblioteca de JWT instalada.
+- [X] Operação de cadastro realmente salva um usuário no banco de dados.
 - [ ] Cadastro tem algumas validações sendo mais robusto.
-- [ ] Login realmente busca usuário no banco de dados.
-- [ ] Aplica salt na senha do usuário.
-- [ ] Aplica slow Hash na senha do usuário.
-- [ ] Login retorna JWT para o frontend que o guarda no Sessin Storage.
+- [X] Login realmente busca usuário no banco de dados.
+- [X] Aplica salt na senha do usuário.
+- [X] Aplica slow Hash na senha do usuário.
+- [X] Login retorna JWT para o frontend que o guarda no Sessin Storage.
 - [ ] Após o Login a página de usuário normal ou adm é mostrada corretamente.
 - [ ] Adm é capaz de ver produtos existentes.
 - [ ] Adm é capaz de cadastrar novos produtos.
