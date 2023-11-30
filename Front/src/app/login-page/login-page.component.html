@@ -13,41 +13,8 @@
             <button class="btn btn-primary submitButton" type="submit">Entrar</button>
         </form>
     </div>
-    <div class="col-sm-7" style="text-align: center; margin: 0;">
-        <a href="#cadastroModal" data-bs-toggle="modal" data-bs-target="#cadastroModal">Não tem uma conta? Cadastre-se</a>
-        <div class="modal fade" id="cadastroModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">Cadastro de usuário</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form action="">
-
-                            <!-- Após fazer as tabelas no banco, criar aqui os campos -->
-
-                            <div class="input-group mb-3">
-                                <input type="text" class="form-control" placeholder="Nome" aria-label="Nome" aria-describedby="basic-addon1">
-                            </div>
-                            <div class="input-group mb-3">
-                                <input type="text" class="form-control" placeholder="Preço" aria-label="Preço" aria-describedby="basic-addon1">
-                            </div>
-                            <div class="input-group mb-3">
-                                <input type="file" class="form-control" id="">
-                            </div>
-                            <div class="input-group">
-                                <span class="input-group-text">Descrição</span>
-                                <textarea class="form-control" aria-label="Descrição"></textarea>
-                            </div>
-                       </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary" >Save changes</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <button mat-flat-button color="primary"
+        (click)="registrar()">
+        Criar Nova Conta
+    </button>
 </main>

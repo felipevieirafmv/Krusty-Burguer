@@ -17,7 +17,7 @@ Obs: 'Tem tela/Tem Interface' = Possui parte visual, mesmo sem funcionar.
 - [ ] Tela do totem tem interface para inserção de código da promoção.
 - [ ] Tela do totem tem interface para colocar itens na sacola.
 - [X] Banco de dados criado com tabelas de Usuário, Pedido, ItemPedido, Produto, Promoção ou similar.
-- [ ] Rotas no Frontend Configuradas.
+- [X] Rotas no Frontend Configuradas.
 - [X] Projeto Backend C# criado.
 - [X] CORS Configurado.
 - [ ] HttpClient configurado e podendo ser usado para fazer quests entre Back e Front.
