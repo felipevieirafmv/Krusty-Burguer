@@ -9,6 +9,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatDialog, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { HttpClient } from '@angular/common/http';
 import { ClientServiceService } from '../services/client-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-page',
@@ -22,10 +23,10 @@ import { ClientServiceService } from '../services/client-service.service';
 export class LoginPageComponent {
   constructor (public dialog: MatDialog,
     private client: ClientServiceService,
-    private http: HttpClient) { }
+    private http: HttpClient,
+	private router: Router) { }
 
     username: string = ""
-    cpf: string = ""
     password: string = ""
 
     logar()
@@ -42,6 +43,11 @@ export class LoginPageComponent {
 			else
 			{
 				sessionStorage.setItem('jwt', JSON.stringify(result))
+
+				if(result.adm == false)
+					console.log("Cliente");
+				else
+					this.router.navigate(['adm']);
 			}
 		})
     }

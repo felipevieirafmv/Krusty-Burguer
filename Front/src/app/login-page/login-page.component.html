@@ -3,7 +3,7 @@
         <img class="logoSize" src="../../assets/logoKrusty.png">
             <p>
                 <mat-form-field appearance="fill" class="inputLogin">
-                    <input matInput placeholder="Login"
+                    <input matInput type="text" placeholder="Login"
                         [(ngModel)]="username"/>
                 </mat-form-field>
             </p>
@@ -13,10 +13,15 @@
                         [(ngModel)]="password"/>
                 </mat-form-field>
             </p>
-            <button class="btn btn-primary submitButton" (click)="logar()">Entrar</button>
+            <button mat-flat-button style="background-color: #1E90FF; color: white;"
+                (click)="logar()">
+                Entrar
+            </button>
     </div>
-    <button mat-flat-button color="primary"
-        (click)="registrar()">
-        Criar Nova Conta
-    </button>
+    <div style="text-align: center; align-items: center;">
+        <button mat-flat-button style="background-color: #1E90FF; color: white;"
+            (click)="registrar()">
+            Criar Nova Conta
+        </button>
+</div>
 </main>

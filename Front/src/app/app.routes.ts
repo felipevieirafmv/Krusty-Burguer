@@ -6,8 +6,12 @@ import { ProdutosPageComponent } from './produtos-page/produtos-page.component';
 import { TotemPageComponent } from './totem-page/totem-page.component';
 
 export const routes: Routes = [
-    { path: 'login', component: LoginPageComponent},
-    { path: 'adm', component: AdmPageComponent},
-    { path: 'pedidos', component: PedidosPageComponent},
-    { path: 'totem', component: TotemPageComponent},
+    { path: '', component: LoginPageComponent },
+    { path: 'adm',
+        children: [
+            { path: '', component: AdmPageComponent },
+            { path: 'pedidos', component: PedidosPageComponent },
+            { path: 'totem', component: TotemPageComponent },
+            { path: 'produtos', component: ProdutosPageComponent },
+    ]},
 ];
