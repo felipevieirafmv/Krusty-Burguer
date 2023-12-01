@@ -31,9 +31,11 @@ public class ProductController : ControllerBase
         if (produto is null || produto.Nome is null)
             errors.Add("É necessário informar um nome.");
         if (produto.Descricao is null)
-            errors.Add("É necessário informar uma descrição");
+            errors.Add("É necessário informar uma descrição.");
         if (produto.Preco <=0)
-            errors.Add("É necessário informar um preço");
+            errors.Add("É necessário informar um preço.");
+        if (produto.Tipo is null)
+            errors.Add("É necessário informar um tipo.");
         
         if (errors.Count > 0)
             return BadRequest(errors);

@@ -11,6 +11,7 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { HttpClient } from '@angular/common/http';
 import { ClientServiceService } from '../services/client-service.service';
 import { Router } from '@angular/router';
+import { ProductServiceService } from '../services/product-service.service';
 
 @Component({
   selector: 'app-produtos-page',
@@ -27,5 +28,44 @@ export class ProdutosPageComponent {
 		private http: HttpClient,
 		private router: Router) { }
 	
+	// nome: string = ""
+	// descricao: string = ""
+	// tipo: string = ""
+
+	registrar()
+	{
+		this.dialog.open(NewProdutoDialog)
+	}
 	
+}
+
+@Component({
+	selector: 'app-new-produto-dialog',
+	standalone: true,
+	imports: [CommonModule, MatCardModule, MatInputModule, MatButtonModule, MatFormFieldModule, FormsModule],
+	templateUrl: './new-produto-dialog.component.html',
+	styleUrl: './produtos-page.component.css'
+})
+export class NewProdutoDialog
+{
+	nome: string = ''
+	descricao: string = ''
+	tipo: string = ''
+	preco: number = 0
+
+	constructor(
+		public dialogRef: MatDialogRef<NewProdutoDialog>,
+		private client: ProductServiceService) { }
+
+	create()
+	{
+		this.client.register({
+			nome: this.nome,
+			descricao: this.descricao,
+			preco: this.preco,
+			tipo: this.tipo,
+		})
+
+		this.dialogRef.close()
+	}
 }

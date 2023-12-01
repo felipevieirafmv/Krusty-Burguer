@@ -22,6 +22,7 @@ public class ProductService : IProductService
 
         produto.Nome = data.Nome;
         produto.Descricao = data.Descricao;
+        produto.Tipo = data.Tipo;
         produto.Preco = data.Preco;
 
         
