@@ -7,6 +7,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatDialog, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { HttpClient } from '@angular/common/http';
 import { ClientServiceService } from '../services/client-service.service';
 import { Router } from '@angular/router';
@@ -89,3 +90,36 @@ export class NewUserDialog
 		this.dialogRef.close()
 	}
 }
+
+@Component({
+	selector: 'app-new-adm-dialog',
+	standalone: true,
+	imports: [CommonModule, MatCardModule, MatInputModule,
+	  MatButtonModule, MatFormFieldModule, FormsModule, MatSlideToggleModule ],
+	templateUrl: './new-adm-dialog.component.html',
+	styleUrl: './login-page.component.css'
+  })
+  export class NewAdmDialog
+  {
+	username: string = ''
+	cpf: string = ''
+	password: string = ''
+	repeatPassword: string = ''
+	isChecked: boolean = false;
+  
+	constructor(public dialogRef: MatDialogRef<NewUserDialog>,
+	  private client: ClientServiceService
+	  ) {}
+  
+	create()
+	{
+	  this.client.register({
+		login: this.username,
+		cpf: this.cpf,
+		password: this.password,
+		adm: this.isChecked
+	  })
+  
+	  this.dialogRef.close()
+	}
+  }

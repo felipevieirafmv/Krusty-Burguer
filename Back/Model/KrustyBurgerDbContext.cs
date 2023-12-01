@@ -28,13 +28,14 @@ public partial class KrustyBurgerDbContext : DbContext
     public virtual DbSet<Usuario> Usuarios { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
         => optionsBuilder.UseSqlServer("Data Source=CT-C-001YQ\\SQLEXPRESS01;Initial Catalog=KrustyBurgerDB;Integrated Security=True;TrustServerCertificate=true");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Imagem>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Imagem__3214EC272D2451F0");
+            entity.HasKey(e => e.Id).HasName("PK__Imagem__3214EC27CFF73FF0");
 
             entity.ToTable("Imagem");
 
@@ -44,13 +45,14 @@ public partial class KrustyBurgerDbContext : DbContext
 
         modelBuilder.Entity<Pedido>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Pedido__3214EC27793C5640");
+            entity.HasKey(e => e.Id).HasName("PK__Pedido__3214EC272BF171A5");
 
             entity.ToTable("Pedido");
 
             entity.Property(e => e.Id).HasColumnName("ID");
             entity.Property(e => e.HoraEntregue).HasColumnType("datetime");
             entity.Property(e => e.HoraPedido).HasColumnType("datetime");
+            entity.Property(e => e.PedidoPronto).HasDefaultValueSql("((0))");
             entity.Property(e => e.UsuarioId).HasColumnName("UsuarioID");
 
             entity.HasOne(d => d.Usuario).WithMany(p => p.Pedidos)
@@ -61,7 +63,7 @@ public partial class KrustyBurgerDbContext : DbContext
 
         modelBuilder.Entity<PedidoProduto>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__PedidoPr__3214EC270E0317AE");
+            entity.HasKey(e => e.Id).HasName("PK__PedidoPr__3214EC27353DB2A9");
 
             entity.ToTable("PedidoProduto");
 
@@ -71,16 +73,16 @@ public partial class KrustyBurgerDbContext : DbContext
 
             entity.HasOne(d => d.Produto).WithMany(p => p.PedidoProdutos)
                 .HasForeignKey(d => d.ProdutoId)
-                .HasConstraintName("FK__PedidoPro__Produ__44FF419A");
+                .HasConstraintName("FK__PedidoPro__Produ__45F365D3");
 
             entity.HasOne(d => d.Promocao).WithMany(p => p.PedidoProdutos)
                 .HasForeignKey(d => d.PromocaoId)
-                .HasConstraintName("FK__PedidoPro__Promo__45F365D3");
+                .HasConstraintName("FK__PedidoPro__Promo__46E78A0C");
         });
 
         modelBuilder.Entity<Produto>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Produto__3214EC2793F568C7");
+            entity.HasKey(e => e.Id).HasName("PK__Produto__3214EC271E52FBED");
 
             entity.ToTable("Produto");
 
@@ -96,12 +98,12 @@ public partial class KrustyBurgerDbContext : DbContext
 
             entity.HasOne(d => d.Imagem).WithMany(p => p.Produtos)
                 .HasForeignKey(d => d.ImagemId)
-                .HasConstraintName("FK__Produto__ImagemI__3F466844");
+                .HasConstraintName("FK__Produto__ImagemI__403A8C7D");
         });
 
         modelBuilder.Entity<Promocao>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Promocao__3214EC270372EB78");
+            entity.HasKey(e => e.Id).HasName("PK__Promocao__3214EC27E20119C4");
 
             entity.ToTable("Promocao");
 
@@ -110,12 +112,12 @@ public partial class KrustyBurgerDbContext : DbContext
 
             entity.HasOne(d => d.Produto).WithMany(p => p.Promocaos)
                 .HasForeignKey(d => d.ProdutoId)
-                .HasConstraintName("FK__Promocao__Produt__4222D4EF");
+                .HasConstraintName("FK__Promocao__Produt__4316F928");
         });
 
         modelBuilder.Entity<Usuario>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Usuario__3214EC27C27487AA");
+            entity.HasKey(e => e.Id).HasName("PK__Usuario__3214EC27A81615D7");
 
             entity.ToTable("Usuario");
 

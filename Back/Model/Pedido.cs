@@ -13,5 +13,7 @@ public partial class Pedido
 
     public DateTime? HoraEntregue { get; set; }
 
+    public bool? PedidoPronto { get; set; }
+
     public virtual Usuario Usuario { get; set; }
 }
