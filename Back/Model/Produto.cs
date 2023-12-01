@@ -13,6 +13,8 @@ public partial class Produto
 
     public double Preco { get; set; }
 
+    public string Tipo { get; set; }
+
     public int? ImagemId { get; set; }
 
     public virtual Imagem Imagem { get; set; }

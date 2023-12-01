@@ -1,6 +1,7 @@
 using System.Linq;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore;
 
 namespace Back.Services;
 
@@ -9,18 +10,35 @@ using DTO;
 
 public class ProductService : IProductService
 {
-    public Task Create(ProductData data)
+    KrustyBurgerDbContext ctx;
+    ISecurityService security;
+    public ProductService(KrustyBurgerDbContext ctx, ISecurityService security) {
+        this.ctx = ctx;
+        this.security = security;
+    }
+    public async Task Create(ProductData data)
     {
-        throw new System.NotImplementedException();
+        Produto produto = new Produto();
+
+        produto.Nome = data.Nome;
+        produto.Descricao = data.Descricao;
+        produto.Preco = data.Preco;
+
+        
+        this.ctx.Add(produto);
+        await this.ctx.SaveChangesAsync();
     }
 
-    public Task<Produto> GetByName(string name)
+    public async Task<Produto> GetByName(string name)
     {
-        throw new System.NotImplementedException();
+        var query = 
+            from u in this.ctx.Produtos
+            where u.Nome == name
+            select u;
+        
+        return await query.FirstOrDefaultAsync();
     }
 
-    public Task<List<Produto>> GetProdutos()
-    {
-        throw new System.NotImplementedException();
-    }
+    public async Task<List<Produto>> GetProdutos()
+        => await this.ctx.Produtos.ToListAsync();
 }

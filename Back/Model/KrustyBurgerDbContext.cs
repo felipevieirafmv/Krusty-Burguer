@@ -35,7 +35,7 @@ public partial class KrustyBurgerDbContext : DbContext
     {
         modelBuilder.Entity<Imagem>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Imagem__3214EC27CFF73FF0");
+            entity.HasKey(e => e.Id).HasName("PK__Imagem__3214EC272A7F3429");
 
             entity.ToTable("Imagem");
 
@@ -45,7 +45,7 @@ public partial class KrustyBurgerDbContext : DbContext
 
         modelBuilder.Entity<Pedido>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Pedido__3214EC272BF171A5");
+            entity.HasKey(e => e.Id).HasName("PK__Pedido__3214EC278091D0B5");
 
             entity.ToTable("Pedido");
 
@@ -63,7 +63,7 @@ public partial class KrustyBurgerDbContext : DbContext
 
         modelBuilder.Entity<PedidoProduto>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__PedidoPr__3214EC27353DB2A9");
+            entity.HasKey(e => e.Id).HasName("PK__PedidoPr__3214EC273B6541C3");
 
             entity.ToTable("PedidoProduto");
 
@@ -82,7 +82,7 @@ public partial class KrustyBurgerDbContext : DbContext
 
         modelBuilder.Entity<Produto>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Produto__3214EC271E52FBED");
+            entity.HasKey(e => e.Id).HasName("PK__Produto__3214EC279870309B");
 
             entity.ToTable("Produto");
 
@@ -95,6 +95,10 @@ public partial class KrustyBurgerDbContext : DbContext
                 .IsRequired()
                 .HasMaxLength(100)
                 .IsUnicode(false);
+            entity.Property(e => e.Tipo)
+                .IsRequired()
+                .HasMaxLength(20)
+                .IsUnicode(false);
 
             entity.HasOne(d => d.Imagem).WithMany(p => p.Produtos)
                 .HasForeignKey(d => d.ImagemId)
@@ -103,7 +107,7 @@ public partial class KrustyBurgerDbContext : DbContext
 
         modelBuilder.Entity<Promocao>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Promocao__3214EC27E20119C4");
+            entity.HasKey(e => e.Id).HasName("PK__Promocao__3214EC2763C166FE");
 
             entity.ToTable("Promocao");
 
@@ -117,7 +121,7 @@ public partial class KrustyBurgerDbContext : DbContext
 
         modelBuilder.Entity<Usuario>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Usuario__3214EC27A81615D7");
+            entity.HasKey(e => e.Id).HasName("PK__Usuario__3214EC273D38E3D6");
 
             entity.ToTable("Usuario");
 
