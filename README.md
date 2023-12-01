@@ -31,7 +31,7 @@ Obs: 'Tem tela/Tem Interface' = Possui parte visual, mesmo sem funcionar.
 - [X] Login retorna JWT para o frontend que o guarda no Sessin Storage.
 - [ ] Após o Login a página de usuário normal ou adm é mostrada corretamente.
 - [ ] Adm é capaz de ver produtos existentes.
-- [ ] Adm é capaz de cadastrar novos produtos.
+- [X] Adm é capaz de cadastrar novos produtos.
 - [ ] Adm é capaz de ver promoções existentes.
 - [ ] Adm é capaz de criar novas promoções.
 - [ ] Adm é capaz de ver Dashboard com dois gráficos de informações.

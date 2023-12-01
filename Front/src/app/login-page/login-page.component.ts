@@ -43,7 +43,7 @@ export class LoginPageComponent {
 			}
 			else
 			{
-				sessionStorage.setItem('jwt', JSON.stringify(result))
+				sessionStorage.setItem('jwt', result.jwt)
 
 				if(result.adm == false)
 					console.log("Cliente");

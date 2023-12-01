@@ -8,7 +8,6 @@ using Microsoft.AspNetCore.Cors;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
-
 namespace back.Controllers;
 
 using DTO;
@@ -25,9 +24,15 @@ public class ProductController : ControllerBase
     [EnableCors("DefaultPolicy")]
     public async Task<IActionResult> Create(
         [FromBody]ProductData produto,
-        [FromServices]IProductService service)
+        [FromServices]IProductService service,
+        [FromServices]CryptoService crypto)
     {
         var errors = new List<string>();
+
+        var jwtEmObj = new Payload();
+
+        jwtEmObj = crypto.Validate<Payload>(produto.JWT);
+        
         if (produto is null || produto.Nome is null)
             errors.Add("É necessário informar um nome.");
         if (produto.Descricao is null)
@@ -39,8 +44,12 @@ public class ProductController : ControllerBase
         
         if (errors.Count > 0)
             return BadRequest(errors);
+
+        Console.WriteLine(jwtEmObj);
         
         await service.Create(produto);
         return Ok();
     }
+
+    // [HttpGet()]
 }

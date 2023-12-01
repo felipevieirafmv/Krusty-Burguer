@@ -52,6 +52,7 @@ export class NewProdutoDialog
 	descricao: string = ''
 	tipo: string = ''
 	preco: number = 0
+	jwt: string = JSON.stringify(sessionStorage.getItem("jwt"))
 
 	constructor(
 		public dialogRef: MatDialogRef<NewProdutoDialog>,
@@ -64,6 +65,7 @@ export class NewProdutoDialog
 			descricao: this.descricao,
 			preco: this.preco,
 			tipo: this.tipo,
+			jwt: this.jwt
 		})
 
 		this.dialogRef.close()
