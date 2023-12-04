@@ -1,6 +1,6 @@
 import { ProdutoData } from "./produto-data";
 
-export interface productObj
+export interface ProductObj
 {
     data: ProdutoData,
     jwt: string,

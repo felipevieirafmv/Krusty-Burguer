@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { MatCardModule } from '@angular/material/card';
@@ -7,6 +7,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatDialog, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
+import { MatSelectModule } from '@angular/material/select';
 import { HttpClient } from '@angular/common/http';
 import { ClientServiceService } from '../services/client-service.service';
 import { Router } from '@angular/router';
@@ -27,33 +28,15 @@ export class AdmPageComponent {
 	  private http: HttpClient,
 	  private router: Router) { }
 
-  registrar()
-  {
-	  this.dialog.open(NewProdutoDialog)
-  }
+	registrar()
+	{
+		this.dialog.open(NewProdutoDialog)
+	}
+	produtos()
+	{
+		this.router.navigate(['produtos']);
+	}	
 }
-
-@Component({
-	selector: 'app-produtos-page',
-	standalone: true,
-	imports: [CommonModule, MatCardModule, MatInputModule,
-	  MatButtonModule, MatFormFieldModule, FormsModule,
-		MatDialogModule],
-	templateUrl: '../produtos-page/produtos-page.component.html',
-	styleUrl: '../produtos-page/produtos-page.component.css'
-  })
-  export class ProdutosPageComponent {
-		constructor (public dialog: MatDialog,
-		  private client: ClientServiceService,
-		  private http: HttpClient,
-		  private router: Router) { }
-
-	  registrar()
-	  {
-		  this.dialog.open(NewProdutoDialog)
-	  }
-	  
-  }
 
 @Component({
 	selector: 'app-new-produto-dialog',
@@ -86,4 +69,16 @@ export class NewProdutoDialog
 
 		this.dialogRef.close()
 	}
+}
+
+@Component({
+	selector: 'app-new-produto-dialog',
+	standalone: true,
+	imports: [CommonModule, MatCardModule, MatInputModule, MatButtonModule, MatFormFieldModule, FormsModule, MatSelectModule],
+	templateUrl: '../produtos-page/new-produto-dialog.component.html',
+	styleUrl: '../produtos-page/produtos-page.component.css'
+})
+export class NewPromoDialog implements OnInit
+{
+	
 }

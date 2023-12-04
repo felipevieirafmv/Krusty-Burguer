@@ -57,5 +57,16 @@ public class ProductController : ControllerBase
         return Ok();
     }
 
-    // [HttpGet()]
+    [HttpGet()]
+    [EnableCors("DefaultPolicy")]
+    public async Task<IActionResult> Get(
+        [FromServices]IProductService service)
+        {
+            var a = await service.GetProdutos();
+            var errors = new List<string>();
+            if (errors.Count > 0)
+                return BadRequest(errors);
+
+            return Ok(a);
+        }
 }

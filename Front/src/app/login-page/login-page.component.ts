@@ -46,7 +46,7 @@ export class LoginPageComponent {
 				sessionStorage.setItem('jwt', result.jwt)
 
 				if(result.adm == false)
-					console.log("Cliente");
+					this.router.navigate(['user']);
 				else
 					this.router.navigate(['adm']);
 			}

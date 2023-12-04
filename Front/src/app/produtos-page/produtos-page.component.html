@@ -4,63 +4,19 @@
     </div>
 </nav>
 <div class="mainBox">
-    <div class="addDiv">
-        <button mat-flat-button style="background-color: #1E90FF; color: white;"
-            (click)="registrar()">
-            Adicionar Produto
-        </button>
-    </div>
-    <div class="row" style="width: 100%; margin: 0; padding: 1% 5% 0 5%; height: 50%;">
-        <div class="col-sm-3" style="padding-top: 2%;">
-            <div class="card" style="align-items: center;">
-                <img src="../../assets/krusty.png" class="card-img-top cardImg" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Krusty Burger Platter - $12.99
-                </h5>
-                  <p class="card-text">1/3 lb. Burger with Secret Sauce, cheddar cheese sauce, a giant tomato slice, iceberg lettuce, on a specialty bun. Served with Kurly fries.</p>
-                  <button type="button" class="btn btn-primary endButton">Editar</button>
-                </div>
+  <div class="row" style="width: 100%; margin: 0; padding: 1% 5% 0 5%; height: 50%;">
+    
+    @for (item of list1; track item) {
+      <div class="col-sm-3" style="padding-top: 2%;">
+          <div class="card" style="align-items: center;">
+              <img src="../../assets/krusty.png" class="card-img-top cardImg" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">{{item.nome}} - ${{item.preco}}
+              </h5>
+                <p class="card-text">{{item.descricao}}</p>
               </div>
-        </div>
-        <div class="col-sm-3" style="padding-top: 2%;">
-            <div class="card">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <button type="button" class="btn btn-primary endButton">Editar</button>
-                </div>
-              </div>
-        </div>
-        <div class="col-sm-3" style="padding-top: 2%;">
-            <div class="card">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <button type="button" class="btn btn-primary endButton">Editar</button>
-                </div>
-              </div>
-        </div>
-        <div class="col-sm-3" style="padding-top: 2%;">
-            <div class="card">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <button type="button" class="btn btn-primary endButton">Editar</button>
-                </div>
-              </div>
-        </div>
-        <div class="col-sm-3" style="padding-top: 2%;">
-            <div class="card">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <button type="button" class="btn btn-primary endButton">Editar</button>
-                </div>
-              </div>
-        </div>
-    </div>
+            </div>
+      </div>
+    }
+  </div>
 </div>

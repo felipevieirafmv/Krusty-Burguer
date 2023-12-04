@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { MatCardModule } from '@angular/material/card';
@@ -10,7 +10,7 @@ import { MatDialog, MatDialogModule, MatDialogRef } from '@angular/material/dial
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { HttpClient } from '@angular/common/http';
 import { ClientServiceService } from '../services/client-service.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ProductServiceService } from '../services/product-service.service';
 
 @Component({
@@ -22,15 +22,24 @@ import { ProductServiceService } from '../services/product-service.service';
   templateUrl: './produtos-page.component.html',
   styleUrl: './produtos-page.component.css'
 })
-export class ProdutosPageComponent {
+export class ProdutosPageComponent implements OnInit {
   	constructor (public dialog: MatDialog,
 		private client: ClientServiceService,
+		private route: ActivatedRoute,
 		private http: HttpClient,
-		private router: Router) { }
-	
-	// nome: string = ""
-	// descricao: string = ""
-	// tipo: string = ""
+		private router: Router,
+		private service: ProductServiceService
+	) { }
+
+	// list: any = []
+	list1: any = []
+
+	ngOnInit(): void {
+		this.service.initItems().subscribe((data: any) => {
+			this.list1 = [];
+			data.forEach((x: any) => this.list1.push(x));
+		})
+	}
 
 	registrar()
 	{
