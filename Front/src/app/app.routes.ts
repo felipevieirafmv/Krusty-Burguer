@@ -12,6 +12,6 @@ export const routes: Routes = [
             { path: '', component: AdmPageComponent },
             { path: 'pedidos', component: PedidosPageComponent },
             { path: 'totem', component: TotemPageComponent },
-            { path: 'produtos', component: ProdutosPageComponent },
     ]},
+    { path: 'produtos', component: ProdutosPageComponent },
 ];

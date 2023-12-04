@@ -35,7 +35,7 @@ public partial class KrustyBurgerDbContext : DbContext
     {
         modelBuilder.Entity<Imagem>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Imagem__3214EC272A7F3429");
+            entity.HasKey(e => e.Id).HasName("PK__Imagem__3214EC270683C0DB");
 
             entity.ToTable("Imagem");
 
@@ -45,7 +45,7 @@ public partial class KrustyBurgerDbContext : DbContext
 
         modelBuilder.Entity<Pedido>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Pedido__3214EC278091D0B5");
+            entity.HasKey(e => e.Id).HasName("PK__Pedido__3214EC279CF63A68");
 
             entity.ToTable("Pedido");
 
@@ -63,7 +63,7 @@ public partial class KrustyBurgerDbContext : DbContext
 
         modelBuilder.Entity<PedidoProduto>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__PedidoPr__3214EC273B6541C3");
+            entity.HasKey(e => e.Id).HasName("PK__PedidoPr__3214EC2718A67F5A");
 
             entity.ToTable("PedidoProduto");
 
@@ -82,7 +82,7 @@ public partial class KrustyBurgerDbContext : DbContext
 
         modelBuilder.Entity<Produto>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Produto__3214EC279870309B");
+            entity.HasKey(e => e.Id).HasName("PK__Produto__3214EC27B82C1EA1");
 
             entity.ToTable("Produto");
 
@@ -107,7 +107,7 @@ public partial class KrustyBurgerDbContext : DbContext
 
         modelBuilder.Entity<Promocao>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Promocao__3214EC2763C166FE");
+            entity.HasKey(e => e.Id).HasName("PK__Promocao__3214EC2701AE6E43");
 
             entity.ToTable("Promocao");
 
@@ -121,7 +121,7 @@ public partial class KrustyBurgerDbContext : DbContext
 
         modelBuilder.Entity<Usuario>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Usuario__3214EC273D38E3D6");
+            entity.HasKey(e => e.Id).HasName("PK__Usuario__3214EC27489E4237");
 
             entity.ToTable("Usuario");
 

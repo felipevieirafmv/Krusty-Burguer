@@ -13,8 +13,10 @@ namespace back.Controllers;
 using DTO;
 using Back.Model;
 using Back.Services;
-using System.Security.Cryptography;
 using Trevisharp.Security.Jwt;
+using System.Security.Principal;
+using System.Security.Cryptography;
+using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage;
 
 [ApiController]
 [Route("produto")]
@@ -23,31 +25,35 @@ public class ProductController : ControllerBase
     [HttpPost("cadastro")]
     [EnableCors("DefaultPolicy")]
     public async Task<IActionResult> Create(
-        [FromBody]ProductData produto,
+        [FromBody]ProductObj obj,
         [FromServices]IProductService service,
         [FromServices]CryptoService crypto)
     {
         var errors = new List<string>();
+        var prod = obj.data;
+        var jwtEmObj = crypto.Validate<Payload>(obj.Jwt.Replace("\"", ""));
 
-        var jwtEmObj = new Payload();
-
-        jwtEmObj = crypto.Validate<Payload>(produto.JWT);
+        if (!jwtEmObj.Adm)
+            errors.Add("Usuário não é um adm");
+        else
+        {
+            if (prod is null || prod.Nome is null)
+                errors.Add("É necessário informar um nome.");
+            if (prod.Descricao is null)
+                errors.Add("É necessário informar uma descrição.");
+            if (prod.Preco <=0)
+                errors.Add("É necessário informar um preço.");
+            if (prod.Tipo is null)
+                errors.Add("É necessário informar um tipo.");
+        }
         
-        if (produto is null || produto.Nome is null)
-            errors.Add("É necessário informar um nome.");
-        if (produto.Descricao is null)
-            errors.Add("É necessário informar uma descrição.");
-        if (produto.Preco <=0)
-            errors.Add("É necessário informar um preço.");
-        if (produto.Tipo is null)
-            errors.Add("É necessário informar um tipo.");
         
         if (errors.Count > 0)
             return BadRequest(errors);
 
-        Console.WriteLine(jwtEmObj);
-        
-        await service.Create(produto);
+        Console.WriteLine(jwtEmObj.Adm);
+
+        await service.Create(prod);
         return Ok();
     }
 

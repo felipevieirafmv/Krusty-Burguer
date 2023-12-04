@@ -3,5 +3,4 @@ export interface ProdutoData {
     descricao: string;
     tipo: string;
     preco: number;
-    jwt: string;
 }

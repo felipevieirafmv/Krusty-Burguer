@@ -10,6 +10,7 @@ import { MatDialog, MatDialogModule, MatDialogRef } from '@angular/material/dial
 import { HttpClient } from '@angular/common/http';
 import { ClientServiceService } from '../services/client-service.service';
 import { Router } from '@angular/router';
+import { ProductServiceService } from '../services/product-service.service';
 
 @Component({
 	selector: 'app-adm-page',
@@ -21,12 +22,68 @@ import { Router } from '@angular/router';
 	styleUrl: './adm-page.component.css'
 })
 export class AdmPageComponent {
-	constructor(private router: Router) { }
+	constructor (public dialog: MatDialog,
+	  private client: ClientServiceService,
+	  private http: HttpClient,
+	  private router: Router) { }
 
-	mainRoute = 'adm'
+  registrar()
+  {
+	  this.dialog.open(NewProdutoDialog)
+  }
+}
 
-	produtos()
+@Component({
+	selector: 'app-produtos-page',
+	standalone: true,
+	imports: [CommonModule, MatCardModule, MatInputModule,
+	  MatButtonModule, MatFormFieldModule, FormsModule,
+		MatDialogModule],
+	templateUrl: '../produtos-page/produtos-page.component.html',
+	styleUrl: '../produtos-page/produtos-page.component.css'
+  })
+  export class ProdutosPageComponent {
+		constructor (public dialog: MatDialog,
+		  private client: ClientServiceService,
+		  private http: HttpClient,
+		  private router: Router) { }
+
+	  registrar()
+	  {
+		  this.dialog.open(NewProdutoDialog)
+	  }
+	  
+  }
+
+@Component({
+	selector: 'app-new-produto-dialog',
+	standalone: true,
+	imports: [CommonModule, MatCardModule, MatInputModule, MatButtonModule, MatFormFieldModule, FormsModule],
+	templateUrl: '../produtos-page/new-produto-dialog.component.html',
+	styleUrl: '../produtos-page/produtos-page.component.css'
+})
+export class NewProdutoDialog
+{
+	nome: string = ''
+	descricao: string = ''
+	tipo: string = ''
+	preco: number = 0
+	jwt: string = JSON.stringify(sessionStorage.getItem("jwt"))
+
+	constructor(
+		public dialogRef: MatDialogRef<NewProdutoDialog>,
+		private client: ProductServiceService) { }
+
+	create()
 	{
-		this.router.navigate([this.mainRoute, 'produtos'])
+		this.client.register({
+			nome: this.nome,
+			descricao: this.descricao,
+			preco: this.preco,
+			tipo: this.tipo,
+		}, 
+		this.jwt)
+
+		this.dialogRef.close()
 	}
 }
