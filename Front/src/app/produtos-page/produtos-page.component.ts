@@ -74,6 +74,7 @@ export class NewProdutoDialog
 			descricao: this.descricao,
 			preco: this.preco,
 			tipo: this.tipo,
+			id: 0
 		}, 
 		this.jwt)
 

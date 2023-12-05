@@ -24,3 +24,16 @@
     background-color: #1E90FF;
     font-size: 20px;
 }
+
+mat-form-field{
+    width: 400px;
+    margin: 10px;
+}
+
+button mat-flat-button{
+    width: 120px;
+    height: 50px;
+    color: white;
+    margin: 10px;
+    background-color: #1E90FF;
+}

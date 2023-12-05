@@ -16,6 +16,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddScoped<KrustyBurgerDbContext>();
 builder.Services.AddTransient<IUserService, UserService>();
 builder.Services.AddTransient<IProductService, ProductService>();
+builder.Services.AddTransient<IPromoService, PromoService>();
 builder.Services.AddSingleton<CryptoService>(p => new(){
     InternalKeySize = 24,
     UpdatePeriod = TimeSpan.FromDays(1)

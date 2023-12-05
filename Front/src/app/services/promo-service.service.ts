@@ -7,7 +7,7 @@ import { PromoObj } from '../model/promo-obj-data';
 @Injectable({
   providedIn: 'root'
 })
-export class PromoService {
+export class PromoServiceService {
     constructor(private http: ApiClientService) { }
 
     register(data: PromoData, jwt: string)

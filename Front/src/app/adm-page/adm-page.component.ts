@@ -12,6 +12,8 @@ import { HttpClient } from '@angular/common/http';
 import { ClientServiceService } from '../services/client-service.service';
 import { Router } from '@angular/router';
 import { ProductServiceService } from '../services/product-service.service';
+import { PromoServiceService } from '../services/promo-service.service';
+import { ProdutoData } from '../model/produto-data';
 
 @Component({
 	selector: 'app-adm-page',
@@ -35,7 +37,11 @@ export class AdmPageComponent {
 	produtos()
 	{
 		this.router.navigate(['produtos']);
-	}	
+	}
+	newPromo()
+	{
+		this.dialog.open(NewPromoDialog)
+	}
 }
 
 @Component({
@@ -64,6 +70,7 @@ export class NewProdutoDialog
 			descricao: this.descricao,
 			preco: this.preco,
 			tipo: this.tipo,
+			id: 0
 		}, 
 		this.jwt)
 
@@ -72,13 +79,52 @@ export class NewProdutoDialog
 }
 
 @Component({
-	selector: 'app-new-produto-dialog',
+	selector: 'app-new-promo-dialog',
 	standalone: true,
 	imports: [CommonModule, MatCardModule, MatInputModule, MatButtonModule, MatFormFieldModule, FormsModule, MatSelectModule],
-	templateUrl: '../produtos-page/new-produto-dialog.component.html',
-	styleUrl: '../produtos-page/produtos-page.component.css'
+	templateUrl: '../adm-page/new-promo-dialog.component.html',
+	styleUrl: './adm-page.component.css'
 })
 export class NewPromoDialog implements OnInit
 {
-	
+	nome: string = "";
+	preco: number = 0;
+	produtoId: number = 0;
+	jwt: string = JSON.stringify(sessionStorage.getItem("jwt"))
+
+	constructor(
+		public dialogRef: MatDialogRef<NewPromoDialog>,
+		private client: PromoServiceService,
+		private service: ProductServiceService
+	) { }
+
+	list2: any = []
+
+	ngOnInit(): void {
+		this.service.initItems().subscribe((data: any) => {
+			this.list2 = []
+			data.forEach((x: any) => this.list2.push(x));
+		})
+	}
+
+	create()
+	{
+		this.client.register(
+			{
+				nome: this.nome,
+				preco: this.preco,
+				produtoId: this.produtoId
+			},
+			this.jwt)
+
+		this.dialogRef.close()
+	}
+
+	update(event : any) 
+	{
+		this.list2.forEach((element : ProdutoData) => {
+		if(element.id == event.value)
+			this.preco = element.preco
+		});
+	}
 }
