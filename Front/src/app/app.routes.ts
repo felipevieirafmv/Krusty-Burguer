@@ -6,6 +6,7 @@ import { ProdutosPageComponent } from './produtos-page/produtos-page.component';
 import { PromocoesPageComponent } from './produtos-page/produtos-page.component';
 import { TotemPageComponent } from './totem-page/totem-page.component';
 import { UserPageComponent } from './user-page/user-page.component';
+import { GraphsPageComponent } from './graphs-page/graphs-page.component';
 
 export const routes: Routes = [
     { path: '', component: LoginPageComponent },
@@ -14,6 +15,7 @@ export const routes: Routes = [
             { path: '', component: AdmPageComponent },
             { path: 'pedidos', component: PedidosPageComponent },
             { path: 'totem', component: TotemPageComponent },
+            { path: 'graficos', component: GraphsPageComponent },
     ]},
     { path: 'produtos', component: ProdutosPageComponent },
     { path: 'promocoes', component: PromocoesPageComponent },

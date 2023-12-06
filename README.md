@@ -13,7 +13,7 @@ Obs: 'Tem tela/Tem Interface' = Possui parte visual, mesmo sem funcionar.
 - [X] Possui tela de Cadastro de Produtos.
 - [X] Possui tela de Cadastro de Promoções.
 - [X] Possui tela do totem.
-- [ ] Possui tela dos gráficos.
+- [X] Possui tela dos gráficos.
 - [ ] Tela do totem tem interface para inserção de código da promoção.
 - [ ] Tela do totem tem interface para colocar itens na sacola.
 - [X] Banco de dados criado com tabelas de Usuário, Pedido, ItemPedido, Produto, Promoção ou similar.
@@ -34,7 +34,7 @@ Obs: 'Tem tela/Tem Interface' = Possui parte visual, mesmo sem funcionar.
 - [X] Adm é capaz de cadastrar novos produtos.
 - [X] Adm é capaz de ver promoções existentes.
 - [X] Adm é capaz de criar novas promoções.
-- [ ] Adm é capaz de ver Dashboard com dois gráficos de informações.
+- [X] Adm é capaz de ver Dashboard com dois gráficos de informações.
 - [ ] Gráficos do Dashboard realmente refletem os dados no banco.
 - [ ] É possível ver produtos existentes no Totem.
 - [ ] É possível adicionar itens em uma sacola.
