@@ -60,3 +60,7 @@ create table PedidoProduto(
 	Quantidade int not null
 );
 go
+
+select p.Nome 'Nome', p.Preco 'Preco antigo', pm.Preco 'Preco novo' from Promocao pm
+left join Produto p
+on pm.ProdutoID = p.ID
