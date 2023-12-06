@@ -71,7 +71,7 @@ export class NewProdutoDialog
 			preco: this.preco,
 			tipo: this.tipo,
 			id: 0
-		}, 
+		},
 		this.jwt)
 
 		this.dialogRef.close()
@@ -87,8 +87,8 @@ export class NewProdutoDialog
 })
 export class NewPromoDialog implements OnInit
 {
-	nome: string = "";
-	preco: number = 0;
+	nome: string = '';
+	precoPromo: number = 0;
 	produtoId: number = 0;
 	jwt: string = JSON.stringify(sessionStorage.getItem("jwt"))
 
@@ -109,22 +109,15 @@ export class NewPromoDialog implements OnInit
 
 	create()
 	{
-		this.client.register(
-			{
-				nome: this.nome,
-				preco: this.preco,
-				produtoId: this.produtoId
-			},
-			this.jwt)
+		this.client.register({
+			nome: this.nome,
+			preco: this.precoPromo,
+			produtoId: this.produtoId
+		},
+		this.jwt)
+			
+		console.log(this.precoPromo)
 
 		this.dialogRef.close()
-	}
-
-	update(event : any) 
-	{
-		this.list2.forEach((element : ProdutoData) => {
-		if(element.id == event.value)
-			this.preco = element.preco
-		});
 	}
 }

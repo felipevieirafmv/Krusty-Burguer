@@ -33,7 +33,7 @@ Obs: 'Tem tela/Tem Interface' = Possui parte visual, mesmo sem funcionar.
 - [X] Adm é capaz de ver produtos existentes.
 - [X] Adm é capaz de cadastrar novos produtos.
 - [ ] Adm é capaz de ver promoções existentes.
-- [ ] Adm é capaz de criar novas promoções.
+- [X] Adm é capaz de criar novas promoções.
 - [ ] Adm é capaz de ver Dashboard com dois gráficos de informações.
 - [ ] Gráficos do Dashboard realmente refletem os dados no banco.
 - [ ] É possível ver produtos existentes no Totem.

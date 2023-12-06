@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Cors;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System;
 
 [ApiController]
 [Route("promocao")]
@@ -21,6 +22,7 @@ public class PromoController : ControllerBase
     {
         var errors = new List<string>();
         var promo = obj.data;
+        Console.WriteLine(promo);
         // var jwtEmObj = crypto.Validate<Payload>(obj.Jwt.Replace("\"", ""));
 
         await service.Create(promo);

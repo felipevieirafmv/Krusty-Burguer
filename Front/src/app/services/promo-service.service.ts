@@ -16,7 +16,7 @@ export class PromoServiceService {
             data: data,
             jwt: jwt
         }
-        this.http.post('produto/cadastro', obj) //trocar rota apos fazer no back
+        this.http.post('promocao/cadastro', obj) //trocar rota apos fazer no back
             .subscribe()
     }
 }
