@@ -44,7 +44,15 @@ export class AdmPageComponent {
 	}
 	graficos()
 	{
-		this.router.navigate(['graficos']);
+		this.router.navigate(['adm/graficos']);
+	}
+	totem()
+	{
+		this.router.navigate(['adm/totem']);
+	}
+	pedidos()
+	{
+		this.router.navigate(['adm/pedidos']);
 	}
 	newPromo()
 	{
