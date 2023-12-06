@@ -16,4 +16,8 @@ export class UserPageComponent {
 	{
 		this.router.navigate(['produtos']);
 	}
+	promocoes()
+	{
+		this.router.navigate(['promocoes']);
+	}
 }

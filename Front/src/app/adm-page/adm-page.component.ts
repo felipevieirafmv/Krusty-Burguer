@@ -38,6 +38,10 @@ export class AdmPageComponent {
 	{
 		this.router.navigate(['produtos']);
 	}
+	promocoes()
+	{
+		this.router.navigate(['promocoes']);
+	}
 	newPromo()
 	{
 		this.dialog.open(NewPromoDialog)

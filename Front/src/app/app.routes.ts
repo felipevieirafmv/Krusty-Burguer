@@ -3,6 +3,7 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import { AdmPageComponent } from './adm-page/adm-page.component';
 import { PedidosPageComponent } from './pedidos-page/pedidos-page.component';
 import { ProdutosPageComponent } from './produtos-page/produtos-page.component';
+import { PromocoesPageComponent } from './produtos-page/produtos-page.component';
 import { TotemPageComponent } from './totem-page/totem-page.component';
 import { UserPageComponent } from './user-page/user-page.component';
 
@@ -15,5 +16,6 @@ export const routes: Routes = [
             { path: 'totem', component: TotemPageComponent },
     ]},
     { path: 'produtos', component: ProdutosPageComponent },
+    { path: 'promocoes', component: PromocoesPageComponent },
     { path: 'user', component: UserPageComponent },
 ];

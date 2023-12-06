@@ -1,7 +1,7 @@
 .mainBox {
     background-color: #FFA500;
     height: 92%;
-    overflow-y: hidden;
+    /* overflow-y: hidden; */
     /* font-family: 'Vina Sans', sans-serif; */
 }
 

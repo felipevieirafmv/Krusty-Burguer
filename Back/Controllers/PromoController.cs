@@ -28,4 +28,17 @@ public class PromoController : ControllerBase
         await service.Create(promo);
         return Ok();
     }
+
+    [HttpGet()]
+    [EnableCors("DefaultPolicy")]
+    public async Task<IActionResult> Get(
+        [FromServices]IPromoService service)
+        {
+            var a = await service.GetPromocoes();
+            var errors = new List<string>();
+            if (errors.Count > 0)
+                return BadRequest(errors);
+            
+            return Ok(a);
+        }
 }

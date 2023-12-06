@@ -19,4 +19,10 @@ export class PromoServiceService {
         this.http.post('promocao/cadastro', obj) //trocar rota apos fazer no back
             .subscribe()
     }
+
+    initItems()
+    {
+        var promo = this.http.get("promocao");
+        return promo;
+    }
 }

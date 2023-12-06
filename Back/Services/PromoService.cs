@@ -42,6 +42,7 @@ public class PromoService : IPromoService
             on prod.Id equals promo.ProdutoId
             select new PromoData
             {
+                Nome = prod.Nome,
                 ProdutoId = prod.Id,
                 Preco = (float)promo.Preco
             };

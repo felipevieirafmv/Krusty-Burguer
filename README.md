@@ -6,7 +6,7 @@ Obs: 'Tem tela/Tem Interface' = Possui parte visual, mesmo sem funcionar.
 - [X] Projeto do Frontend Angular Criado.
 - [X] Possui tela de Login.
 - [X] Possui tela de cadastro.
-- [ ] Possui tela de usuário normal das promoções.
+- [X] Possui tela de usuário normal das promoções.
 - [ ] Possui tela para visualizar código da promoção.
 - [X] Possui tela de Administrador.
 - [X] Possui tela de Pedidos.
@@ -32,7 +32,7 @@ Obs: 'Tem tela/Tem Interface' = Possui parte visual, mesmo sem funcionar.
 - [X] Após o Login a página de usuário normal ou adm é mostrada corretamente.
 - [X] Adm é capaz de ver produtos existentes.
 - [X] Adm é capaz de cadastrar novos produtos.
-- [ ] Adm é capaz de ver promoções existentes.
+- [X] Adm é capaz de ver promoções existentes.
 - [X] Adm é capaz de criar novas promoções.
 - [ ] Adm é capaz de ver Dashboard com dois gráficos de informações.
 - [ ] Gráficos do Dashboard realmente refletem os dados no banco.
@@ -45,6 +45,6 @@ Obs: 'Tem tela/Tem Interface' = Possui parte visual, mesmo sem funcionar.
 - [ ] Pedidos podem ser vistos na tela de pedidos.
 - [ ] É possível editar um pedido como 'Entregue' de alguma forma.
 - [ ] Apenas os pedidos corretos aparecem na tela de pedidos (finalizados, porém não entregues).
-- [ ] Usuário é capaz de ver as promoções no sistema.
+- [X] Usuário é capaz de ver as promoções no sistema.
 - [ ] Usuário é capaz de gerar um código de promoção válido.
 - [ ] Sistema realmente válida código de promoção.

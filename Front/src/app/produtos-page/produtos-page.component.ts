@@ -12,6 +12,7 @@ import { HttpClient } from '@angular/common/http';
 import { ClientServiceService } from '../services/client-service.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductServiceService } from '../services/product-service.service';
+import { PromoServiceService } from '../services/promo-service.service';
 
 @Component({
   selector: 'app-produtos-page',
@@ -28,16 +29,22 @@ export class ProdutosPageComponent implements OnInit {
 		private route: ActivatedRoute,
 		private http: HttpClient,
 		private router: Router,
-		private service: ProductServiceService
+		private service: ProductServiceService,
+		private promoService: PromoServiceService
 	) { }
 
 	// list: any = []
 	list1: any = []
+	list2: any = []
 
 	ngOnInit(): void {
 		this.service.initItems().subscribe((data: any) => {
 			this.list1 = [];
 			data.forEach((x: any) => this.list1.push(x));
+		})
+		this.promoService.initItems().subscribe((data: any) => {
+			this.list2 = [];
+			data.forEach((x: any) => this.list2.push(x));
 		})
 	}
 
@@ -81,3 +88,34 @@ export class NewProdutoDialog
 		this.dialogRef.close()
 	}
 }
+
+@Component({
+	selector: 'app-produtos-page',
+	standalone: true,
+	imports: [CommonModule, MatCardModule, MatInputModule,
+	  MatButtonModule, MatFormFieldModule, FormsModule,
+		MatDialogModule],
+	templateUrl: './promos-page.component.html',
+	styleUrl: './produtos-page.component.css'
+  })
+  export class PromocoesPageComponent implements OnInit {
+		constructor (public dialog: MatDialog,
+		  private client: ClientServiceService,
+		  private route: ActivatedRoute,
+		  private http: HttpClient,
+		  private router: Router,
+		  private service: ProductServiceService,
+		  private promoService: PromoServiceService
+	  ) { }
+  
+	  // list: any = []
+	  list2: any = []
+  
+	  ngOnInit(): void {
+		  this.promoService.initItems().subscribe((data: any) => {
+			  this.list2 = [];
+			  data.forEach((x: any) => this.list2.push(x));
+		  })
+	  }
+	  
+  }
