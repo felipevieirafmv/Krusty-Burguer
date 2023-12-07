@@ -23,7 +23,13 @@ public class PromoController : ControllerBase
         var errors = new List<string>();
         var promo = obj.data;
         Console.WriteLine(promo);
-        // var jwtEmObj = crypto.Validate<Payload>(obj.Jwt.Replace("\"", ""));
+        var jwtEmObj = crypto.Validate<Payload>(obj.Jwt.Replace("\"", ""));
+
+        if(!jwtEmObj.Adm)
+            errors.Add("Usuário não é um adm.");
+        
+        if(errors.Count > 0)
+            return BadRequest(errors);
 
         await service.Create(promo);
         return Ok();
